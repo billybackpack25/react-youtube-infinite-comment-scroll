@@ -1,3 +1,61 @@
+# Cool features
+
+## Div animation of a div
+
+> Add a public comment...
+> - - - - - - - - - - - -
+
+The line above, belove the input box is a div, it will expand from the center to the edges on page load.
+
+```javascript
+...
+<div className="commentLine"></div>
+...
+```
+
+```css
+/* Animation makes the div expand outwards from the center on page load */
+
+.commentLine{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transform: scaleX(0);
+    animation: commentLineScaleIn 1s forwards;
+}
+
+@keyframes commentLineScaleIn {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+```
+
+
+
+# Project
+
+Features:
+- infinite scroll (Load on scroll)
+- Add a comment
+- Reply to a comment
+- Delete a comment
+- Like a comment
+- Unlike a comment
+
+The technologies:
+•React
+•NodeJS
+•Express & Mongoose
+•MongoDB
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

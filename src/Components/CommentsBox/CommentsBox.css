@@ -1,0 +1,76 @@
+input {
+    font-family: inherit;
+    font-size: 100%;
+}
+
+form {
+    overflow: auto;
+}
+
+form input[type="text"] {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom:1px solid lightgrey;
+    padding: 12px 20px 12px 0px;
+    background-color: transparent;
+}
+
+.commentBox{
+    position: relative;   
+}
+
+/* Animation makes the div expand outwards from the center on page load */
+
+.commentLine{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transform: scaleX(0);
+    animation: commentLineScaleIn 1s forwards;
+}
+
+@keyframes commentLineScaleIn {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+/* Buttons */
+
+/*
+
+This styling makes the button go to the right of the div
+The commit background is greyed out and then turns blue when typing
+The cancel button has no background and the text is grey
+
+*/
+
+.commentButton {
+    font-family: inherit; /* Inherit Open sans */
+    font-size: 0.9rem; /* root element font */
+    font-weight: bold;
+    float: right;
+    border: none;
+    margin: 10px 0 0 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.sendButton {
+    background-color: #065fd4;
+    color: white;
+}
+
+
+.sendButton:disabled { /* sudo class disabled*/
+    color: white;
+    cursor: default;
+    background-color: #cccccc;
+}

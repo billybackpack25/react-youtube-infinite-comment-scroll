@@ -1,24 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import TopCommentsBox from './Components/CommentsBox/TopCommentsBox/TopCommentsBox';
+import MessageScroll from './MessageScroll';
+// Main context
+import {ContextProvider} from './Context/Context';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ContextProvider>
+      <div className="ColHolder">
+        {
+          // Comment box autoFocus false so that on page load it 
+          // doesn't go straight there 
+        }
+        <TopCommentsBox autoFocus={false} />
+        {
+          // Render all elemtns below the Top Comments Box
+          // Handle infinate scrolling logic
+        }
+        <MessageScroll />
+      </div>
+    </ContextProvider>
   );
 }
 

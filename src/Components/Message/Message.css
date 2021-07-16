@@ -1,0 +1,50 @@
+.messageContainer {
+    position: relative;
+    width: 100%;
+    word-wrap: break-word;
+    margin: 20px 0;
+    padding-left: 50px;
+}
+
+.fa-user-circle {
+    position: absolute;
+    font-size: 2.2rem;
+    top: 0;
+    left: 0;
+}
+
+.messageUser {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.messageText {
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+.messageIconsContainer {
+    margin-top: 10px;
+}
+
+.messageIconsContainer > * { /* All elements in container */
+    display: inline-block;
+    color: gray;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.arrowReplies {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.arrowReplies > * {
+    color: #4688de;
+    display: inline-block; /* Horiontal rather than verticall */
+}
+
+.arrowReplies > i { /* Icons */
+    margin-right: 10px;
+}
+

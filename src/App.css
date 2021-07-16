@@ -1,38 +1,54 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+body{
+  background-color: #f9f9f9;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.ColHolder{
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1600px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Message scroll */
+
+.bottomBar {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
+  margin: 20px 0;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.loader{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Turns the square into a circle */
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #606060; /* Creates a static loader */
+  animation: spin 1s linear infinite; 
+  /* 
+    animation: adds the keyframe spin animation
+    linear: same speed throughout
+    infinate: doesn't end
+    Needs the keyframes spin
+  */
 }
 
-@keyframes App-logo-spin {
-  from {
+/*
+Keyframes: spin
+This rotates the whole div 360 degrees
+*/
+@keyframes spin {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
