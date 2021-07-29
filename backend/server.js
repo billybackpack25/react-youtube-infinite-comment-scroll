@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 
 // Start the app
-const PORT = 5005;
+const PORT = 8005;
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({
@@ -14,7 +14,7 @@ app.use(express.urlencoded({
 // Configure mongoose
 
 mongoose.connect(
-    'mongodb://192.168.0.88:27017/YouTubeComments',
+    'mongodb://localhost/YouTubeComments',
     {
         useNewUrlParser: true, 
         useUnifiedTopology: true
@@ -63,47 +63,47 @@ const CommentsModel = mongoose.model('Comments', CommentSchema);
 
 // Adding multiple entries
 
-// const commentsToInsert = [
-//     {
-//         user: 'Thanos',
-//         message: 'Looks like I\'ll have to do it myself',
-//         likes: 0,
-//         editable: false,
-//         replies: [
-//             {
-//                 user: 'Iron Man',
-//                 message: 'I\'m Iron man, bitch',
-//                 likes: 50
-//             },
-//             {
-//                 user: 'Dr. Strange',
-//                 message: 'One shot!',
-//                 likes: 450
-//             }
-//         ]
-//     },
-//     {
-//         user: 'Black Panther',
-//         message: 'Holy Wakanda!!',
-//         likes: 4400,
-//         editable: false,
-//         replies: []
-//     },
-//     {
-//         user: 'Wanda',
-//         message: 'Don\'t kill Vision!!',
-//         likes: 450,
-//         editable: false,
-//         replies: []
-//     }
-// ]
+const commentsToInsert = [
+    {
+        user: 'Thanos',
+        message: 'Looks like I\'ll have to do it myself',
+        likes: 0,
+        editable: false,
+        replies: [
+            {
+                user: 'Iron Man',
+                message: 'I\'m Iron man, bitch',
+                likes: 50
+            },
+            {
+                user: 'Dr. Strange',
+                message: 'One shot!',
+                likes: 450
+            }
+        ]
+    },
+    {
+        user: 'Black Panther',
+        message: 'Holy Wakanda!!',
+        likes: 4400,
+        editable: false,
+        replies: []
+    },
+     {
+         user: 'Wanda',
+        message: 'Don\'t kill Vision!!',
+        likes: 450,
+        editable: false,
+        replies: []
+    }
+]
 
 // CommentsModel.insertMany(commentsToInsert, (err, data) => {
-//     if(err){
-//         console.log(err)
-//     }else{
-//         console.log(`Successfully added (${data})`);
-//     }
+//    if(err){
+//        console.log(err)
+//    }else{
+//        console.log(`Successfully added (${data})`);
+//    }
 // })
 
 // Create the routes
@@ -234,5 +234,5 @@ app.get('*', (req, res) => {
 })
 
 
-app.listen(PORT || process.env.PORT, () => console.log('Server started on port 5005'));
+app.listen(PORT || process.env.PORT, () => console.log(`Server started on port ${PORT}-${process.env.PORT}`));
 
